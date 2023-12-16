@@ -8,7 +8,10 @@ from api import api
 
 class Cursos(Resource):
     def get(self):
-        return 'Teste de API 04'
+        cursos = curso_service.listar_cursos()
+        cs = curso_schema.CursoSchema(many=True)
+
+        return make_response(cs.jsonify(cursos), 200)
 
     def post(self):
         cs = curso_schema.CursoSchema()

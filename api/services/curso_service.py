@@ -12,3 +12,6 @@ def cadastrar_curso(curso):
     db.session.commit()
     return curso_db
 
+def listar_cursos():
+    cursos = curso_model.Curso.query.all()
+    return cursos

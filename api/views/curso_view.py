@@ -30,4 +30,22 @@ class Cursos(Resource):
 
             return make_response(cs.jsonify(resultado), 201)
 
+class CursoDetail(Resource):
+    def get(self, id):
+        curso = curso_service.listar_curso_id(id)
+        if curso is None:
+            return make_response(jsonify("Curso não encontrado."), 404)
+
+        cs = curso_schema.CursoSchema()
+        return make_response(cs.jsonify(curso), 200)
+
+    def put(self):
+        pass
+
+    def delete(self):
+        pass
+
 api.add_resource(Cursos, '/cursos')
+api.add_resource(CursoDetail, '/cursos/<int:id>')
+
+

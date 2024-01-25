@@ -7,9 +7,8 @@ class AlunoSchema(ma.SQLAlchemyAutoSchema):
     class Meta:
         model = aluno_model.Aluno
         load_instance = True
-        fields = ("nome", "profissao", "situacao", "email")
+        fields = ("id_aluno", "nome", "data_nascimento", "id_curso")
 
     nome = fields.String(required=True)
-    profissao = fields.String(required=True)
-    situacao = fields.String(required=True)
-    email = fields.String(required=False)
+    data_nascimento = fields.Date(required=True)
+    id_curso = fields.Integer(required=True)

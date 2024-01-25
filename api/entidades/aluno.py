@@ -1,9 +1,8 @@
 class Aluno():
-    def __init__(self, nome, profissao, situacao, email):
+    def __init__(self, nome, data_nascimento, id_curso):
         self.__nome = nome
-        self.__profissao = profissao
-        self.__situacao = situacao
-        self.__email = email
+        self.__data_nascimento = data_nascimento
+        self.__id_curso = id_curso
 
     @property
     def nome(self):
@@ -14,25 +13,17 @@ class Aluno():
         self.__nome = nome
 
     @property
-    def profissao(self):
-        return self.__profissao
+    def data_nascimento(self):
+        return self.__data_nascimento
 
-    @profissao.setter
-    def profissao(self, profissao):
-        self.__profissao = profissao
-
-    @property
-    def situacao(self):
-        return self.__situacao
-
-    @situacao.setter
-    def situacao(self, situacao):
-        self.__situacao = situacao
+    @data_nascimento.setter
+    def data_nascimento(self, data_nascimento):
+        self.__data_nascimento = data_nascimento
 
     @property
-    def email(self, email):
-        return self.__email
+    def id_curso(self):
+        return self.__id_curso
 
-    @email.setter
-    def email(self, email):
-        self.__email = email
+    @id_curso.setter
+    def id_curso(self, id_curso):
+        self.__id_curso = id_curso
